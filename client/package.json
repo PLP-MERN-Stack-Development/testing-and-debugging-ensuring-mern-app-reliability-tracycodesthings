@@ -1,0 +1,70 @@
+{
+  "name": "mern-testing-client",
+  "version": "1.0.0",
+  "description": "React client with comprehensive testing setup",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "axios": "^1.5.1",
+    "prop-types": "^15.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --passWithNoTests",
+    "test:coverage": "react-scripts test --coverage --watchAll=false --passWithNoTests",
+    "test:unit": "react-scripts test --testPathPattern=unit --watchAll=false --passWithNoTests",
+    "test:integration": "react-scripts test --testPathPattern=integration --watchAll=false --passWithNoTests",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/ --ext .js,.jsx",
+    "lint:fix": "eslint src/ --ext .js,.jsx --fix"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.1",
+    "react-scripts": "^5.0.1",
+    "cypress": "^13.4.0",
+    "msw": "^2.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/reportWebVitals.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    }
+  }
+}
