@@ -1,0 +1,67 @@
+{
+  "name": "mern-testing-workspace",
+  "version": "1.0.0",
+  "description": "Comprehensive MERN stack testing workspace with Jest, React Testing Library, Supertest, and Cypress",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm start",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "cd server && npm test",
+    "test:client": "cd client && npm test",
+    "test:unit": "npm run test:server:unit && npm run test:client:unit",
+    "test:integration": "npm run test:server:integration && npm run test:client:integration",
+    "test:server:unit": "cd server && npm run test:unit",
+    "test:server:integration": "cd server && npm run test:integration",
+    "test:client:unit": "cd client && npm run test:unit",
+    "test:client:integration": "cd client && npm run test:integration",
+    "test:e2e": "cd client && npm run cypress:run",
+    "test:e2e:open": "cd client && npm run cypress:open",
+    "cypress:open": "cd client && npm run cypress:open",
+    "cypress:run": "cd client && npm run cypress:run",
+    "test:all": "npm run test:server:coverage && npm run test:client:coverage && npm run test:e2e",
+    "test:coverage": "npm run test:server:coverage && npm run test:client:coverage",
+    "test:server:coverage": "cd server && npm run test:coverage",
+    "test:client:coverage": "cd client && npm run test:coverage",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "install:all": "npm install && npm run install:server && npm run install:client",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "lint": "npm run lint:server && npm run lint:client",
+    "lint:server": "cd server && npm run lint",
+    "lint:client": "cd client && npm run lint",
+    "setup": "npm run install:all && npm run test"
+  },
+  "keywords": [
+    "mern",
+    "testing",
+    "jest",
+    "react-testing-library",
+    "supertest",
+    "cypress",
+    "mongodb",
+    "express",
+    "react",
+    "nodejs"
+  ],
+  "author": "MERN Testing Workspace",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/mern-testing-workspace"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
